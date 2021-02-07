@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Login Page</title>
+    <meta charset="UTF-8"> 
+    </head>
+
+    <body>
+        <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+        <% end %>
+
+        <h1>Welcome to the MyPark Login Page!</h1>
+        <br><br>
+        <h4>Enter Your Username and Password Below to Log-in!</h4>
+        <br><br><br>
+        <form method="post" action="/login">
+        <label>Username: </label><input type="text" name="username" id="username">
+
+
+        <label>Password: </label><input type="password" name="password" id="password">
+        <button type="submit" name="submit" value="submit">Login</button>
+        <br><br><br><br>
+        <p>If you don't have an account, <a href="/signup">click here</a> to sign-up!</p>
+
+        </form>
+        
+    </body>
+</html>

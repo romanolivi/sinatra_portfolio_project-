@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Signup Page</title>
+    <meta charset="UTF-8"> 
+    </head>
+
+    <body>
+        <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+        <% end %>
+
+        <h1>Welcome to the MyPark App!</h1>
+        <br><br>
+        <h4>Enter a Username and Password Below to Create Your Account!</h4>
+        <br><br>
+        <form method="post" action="/signup">
+        <label>Username: </label><input type="text" name="username" id="username">
+
+
+        <label>Password: </label><input type="password" name="password" id="password">
+        <input type="submit" value="submit">
+
+        </form>
+        
+    </body>
+</html>

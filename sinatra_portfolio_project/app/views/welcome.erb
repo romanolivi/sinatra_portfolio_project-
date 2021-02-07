@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Welcome Page</title>
+    <meta charset="UTF-8"> 
+    </head>
+
+    <body>
+    <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+    <% end %>
+    
+        <h1>Welcome to the MyPark App!</h1>
+        <h4>Create or Log In to Your Account, Make a List of Your Favorite Theme Parks, and Check Other Users Lists Out!</h4>
+        <br>
+        <p>Click the <a href="/login">Login</a> link to login to your account!</p>
+        <br>
+        <p>If you dont have an account, click <a href="/signup">Create Account</a> to get started!</p>
+
+        
+    </body>
+</html>

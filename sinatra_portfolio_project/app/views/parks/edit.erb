@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Create Parks</title>
+    <meta charset="UTF-8"> 
+    </head>
+
+    <body>
+    <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+    <% end %>
+
+        <h1>Welcome to the Create Page</h1>
+
+        <h2>Create one of your favorite parks below!</h2>
+        
+        <form method="post" action="/parks">
+        <input type="hidden" id="hidden" name="_method" value="patch">
+        <label>Park Name: </label><input type="text" name="name" id="park_name" value="<%= @park.name %>">
+        <br><br>
+        <label>Park Location: </label><input type="text" name="location" id="park_location" value="<%= @park.location %>">
+        <br><br>
+        <label>Park Type: </label><input type="text" name="type" id="park_type" value="<%= @park.type %>">
+        <br><br>
+        <label>Best Rides: </label><textarea name="rides" id="park_rides"> <%= @park.rides %></textarea>
+        <br><br>
+        <button type="submit" value="submit">Edit Park</button>
+
+        </form>
+
+        
+    </body>
+</html>

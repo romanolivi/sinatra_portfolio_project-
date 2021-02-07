@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title><%= @park.name %></title>
+    <meta charset="UTF-8"> 
+    </head>
+
+    <body>
+    <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+    <% end %>
+
+        <h2>Park Name: </h2>
+        <p><%= @park.name %></p>
+
+        <h2>Location: </h2>
+        <p><%= @park.location %></p>
+
+        <h2>Type: </h2>
+        <p><%= @park.type %></p>
+
+        <h2>Rides: </h2>
+        <p><%= @park.rides %></p>
+
+        <form method="post" action="/parks/<%= @park.id %>">
+            <input type="hidden" id="hidden" name="_method" value="delete">
+            <button type="submit" value="submit">Delete</button>
+        </form>
+
+        <p><a href="/parks/edit">Edit Park</p>
+
+        <p><a href="/parks/new">Create New Park</a></p>
+        
+        <p><a href="/logout">Logout</a></p>
+    </body>
+</html>
