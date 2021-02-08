@@ -14,13 +14,13 @@
 
         <h2>Create one of your favorite parks below!</h2>
         
-        <form method="post" action="/parks/<%= @park.id %>">
+        <form method="POST" action="/parks/<%= @park.id %>">
         <input type="hidden" id="hidden" name="_method" value="patch">
         <label>Park Name: </label><input type="text" name="name" id="park_name" value="<%= @park.name %>">
         <br><br>
         <label>Park Location: </label><input type="text" name="location" id="park_location" value="<%= @park.location %>">
         <br><br>
-        <label>Park Type: </label><input type="text" name="type" id="park_type" value="<%= @park.type %>">
+        <label>Park Theme: </label><input type="text" name="theme" id="park_theme" value="<%= @park.theme %>">
         <br><br>
         <label>Best Rides: </label><textarea name="rides" id="park_rides"> <%= @park.rides %></textarea>
         <br><br>

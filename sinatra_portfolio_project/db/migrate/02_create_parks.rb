@@ -3,7 +3,7 @@ class CreateParks < ActiveRecord::Migration[6.0]
     create_table :parks do |t|
       t.string :name
       t.string :location
-      t.string :type
+      t.string :theme
       t.string :rides
       t.integer :user_id
     end

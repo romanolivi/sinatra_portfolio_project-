@@ -19,8 +19,8 @@
         <h4>Parks: </h4> 
         <br><br>
         <ul>
-            <% @parks.each do |park| %> 
-                <li><a href="/parks/<%= park.id %>><%= park.name%></a></li>
+            <% @user.parks.each do |park| %> 
+                <li><a href="/parks/<%= park.id %>"><%= park.name%></a></li>
             <% end %> 
         </ul>
 

@@ -2,6 +2,7 @@ class ParksController < ApplicationController
 
     get "/parks" do 
         if logged_in?
+            @user = User.find_by_id(current_user.id)
             @parks = Park.all 
             erb :"/parks/index"
         else 
@@ -56,12 +57,12 @@ class ParksController < ApplicationController
 
 
     patch "/parks/:id" do 
-        binding.pry
         @park = Park.find(params[:id])
         if params[:name].empty?
             flash[:message] = "Park must have a name before submitting"
             redirect to "/parks/#{@park.id}/edit"
         else 
+            binding.pry
             @park.update(params)
             @park.save 
             redirect to "/parks/#{@park.id}"

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2) do
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "type"
+    t.string "theme"
     t.string "rides"
     t.integer "user_id"
   end
