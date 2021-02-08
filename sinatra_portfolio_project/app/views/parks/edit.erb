@@ -14,7 +14,7 @@
 
         <h2>Create one of your favorite parks below!</h2>
         
-        <form method="post" action="/parks">
+        <form method="post" action="/parks/<%= @park.id %>">
         <input type="hidden" id="hidden" name="_method" value="patch">
         <label>Park Name: </label><input type="text" name="name" id="park_name" value="<%= @park.name %>">
         <br><br>

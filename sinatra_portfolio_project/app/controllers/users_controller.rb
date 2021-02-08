@@ -7,25 +7,24 @@ class UsersController < ApplicationController
       if !logged_in? 
         erb :"/users/signup"
       else 
-        erb :"/users/show"
+        redirect to "/parks"
       end
     end
     
     post "/signup" do
-        binding.pry
         if params[:username].empty? || params[:password].empty?
             flash[:message]= "You Must Type in Username, Password, and Email to Sign Up."
             redirect "/signup"
         else 
             @user = User.create(username: params[:username], password: params[:password])
             session[:user_id] = @user.id 
-            redirect "/parks"
+            redirect to "/parks"
         end
     end
       
     get "/login" do 
         if logged_in? 
-            erb :"/user/show"
+            redirect to "/parks"
         else 
             erb :"/users/login"
         end 
@@ -34,7 +33,7 @@ class UsersController < ApplicationController
     post "/login" do 
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
-            session[:user_id] = user.id 
+            session[:user_id] = @user.id 
             redirect "/parks"
         else 
             flash[:message] = "Username or Password were Incorrect. Try again"

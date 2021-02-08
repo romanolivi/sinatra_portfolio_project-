@@ -10,24 +10,23 @@
     <%= flash[:message] %>
     <% end %>
 
-        <h2>Park Name: </h2>
-        <p><%= @park.name %></p>
-
-        <h2>Location: </h2>
-        <p><%= @park.location %></p>
-
-        <h2>Type: </h2>
-        <p><%= @park.type %></p>
-
-        <h2>Rides: </h2>
-        <p><%= @park.rides %></p>
+        <h4>Park Name: <%= @park.name %> </h4>
+        <br>
+        <h4>Location: <%= @park.location %> </h4>
+        <br>
+        <h4>Type: <%= @park.type %> </h4>
+        <br>
+        <h4>Rides: <%= @park.rides %></h4>
+        <br>
+        <br><br>
 
         <form method="post" action="/parks/<%= @park.id %>">
             <input type="hidden" id="hidden" name="_method" value="delete">
             <button type="submit" value="submit">Delete</button>
         </form>
+        <br><br>
 
-        <p><a href="/parks/edit">Edit Park</p>
+        <p><a href="/parks/<%= @park.id%>/edit">Edit Park</p>
 
         <p><a href="/parks/new">Create New Park</a></p>
         
