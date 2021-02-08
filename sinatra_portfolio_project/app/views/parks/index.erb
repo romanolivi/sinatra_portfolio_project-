@@ -11,16 +11,16 @@
     <% end %>
 
         <h1>Welcome, <%= current_user.username %>!</h1>
-        <h4>Here is a List of Your Favorite Theme Parks!</h4>
         <br><br>
-        <p>Click the park links to learn more</p>
+        <h2>Here is a List of Your Favorite Theme Parks!</h2>
+        <br><br>
+        <h4>Click the park links to learn more</h4>
         <br><br><br>
 
         <h4>Parks: </h4> 
-        <br><br>
         <ul>
             <% @user.parks.each do |park| %> 
-                <li><a href="/parks/<%= park.id %>"><%= park.name%></a></li>
+                <li><a href="/parks/<%= park.id %>"><%= park.name%></a></li><br>
             <% end %> 
         </ul>
 

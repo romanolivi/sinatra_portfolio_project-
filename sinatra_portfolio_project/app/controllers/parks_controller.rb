@@ -62,8 +62,7 @@ class ParksController < ApplicationController
             flash[:message] = "Park must have a name before submitting"
             redirect to "/parks/#{@park.id}/edit"
         else 
-            binding.pry
-            @park.update(params)
+            @park.update(name: params[:name], location: params[:location], theme: params[:theme], rides: params[:rides])
             @park.save 
             redirect to "/parks/#{@park.id}"
         end
