@@ -9,10 +9,11 @@
     <% if flash.has?(:message) %>
     <%= flash[:message] %>
     <% end %>
+    <br><br>
 
-        <h1>Welcome to the Create Page</h1>
+        <h1>Welcome to the Create Page</h1><br>
 
-        <h2>Create one of your favorite parks below!</h2>
+        <h2>Create one of your favorite parks below!</h2><br>
         
         <form method="post" action="/parks">
         <label>Park Name: </label><input type="text" name="name" id="park_name">

@@ -12,14 +12,15 @@
 
         <h1>Welcome, <%= current_user.username %>!</h1>
         <br><br>
-        <h2>Here is a List of Your Favorite Theme Parks!</h2>
+        <h2>Here is a List of Some Theme Parks!</h2>
         <br><br>
         <h4>Click the park links to learn more</h4>
         <br><br><br>
 
         <h4>Parks: </h4> 
+        <br>
         <ul>
-            <% @user.parks.each do |park| %> 
+            <% @parks.all.each do |park| %> 
                 <li><a href="/parks/<%= park.id %>"><%= park.name%></a></li><br>
             <% end %> 
         </ul>
@@ -29,6 +30,9 @@
         <br><br>
         Create New Park:
         <a href="/parks/new">New Park</a>
+        <br><br>
+        Go to Profile Page: 
+        <a href="/users/<%= @user.slug %>">Profile Page</a>
         <br><br>
         Logout:
         <a href="/logout">Log Out</a>

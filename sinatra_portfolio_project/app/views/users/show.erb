@@ -11,21 +11,27 @@
     <% end %>
 
         <h1>Welcome, <%= current_user.username %>!</h1>
-        <h4>Here is a List of Your Favorite Theme Parks!</h4>
+        <br><br>
+        <h2>Here is a List of Your Favorite Theme Parks!</h2>
+        <br><br>
+        <h4>Click the park links to learn more</h4>
         <br><br><br>
-        <p>Click the park links to learn more</p>
 
         <h4>Parks: </h4> 
-        <br><br>
+        <br>
         <ul>
             <% @user.parks.each do |park| %> 
-                <li>Name: <a href="/parks/<%= park.id %>><%= park.name%></a></li>
+                <li><a href="/parks/<%= park.id %>"><%= park.name%></a></li><br>
             <% end %> 
         </ul>
 
+        
+        
         <br><br>
-        <p><a href="/parks/new">Create New Park</a></p>
+        Create New Park:
+        <a href="/parks/new">New Park</a>
         <br><br>
-        <p><a href="/logout">Click here</a> to log out</p>
+        Logout:
+        <a href="/logout">Log Out</a>
     </body>
 </html>
